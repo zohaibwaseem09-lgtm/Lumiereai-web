@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Lumière AI</title>
+<meta name="description" content="Book a call with Lumière AI to see how AI voice and SMS agents can work for your home service business.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>Lumière AI</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Book a call</a>
+    <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom: 20px;">
+  <div class="wrap" style="max-width: 760px;">
+    <span class="eyebrow">Contact</span>
+    <h1 class="mt-16" style="font-size: clamp(2.2rem, 5vw, 3.4rem);">Let's see where your leads are leaking.</h1>
+    <p class="lede mt-16">Tell us a bit about your business and how calls come in today. We'll follow up to set up a short call.</p>
+  </div>
+</header>
+
+<section class="section-tight">
+  <div class="wrap grid-2" style="align-items: start;">
+    <form id="contact-form" class="reveal">
+      <div class="row-2">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="business">Business name</label>
+          <input type="text" id="business" name="business" required>
+        </div>
+      </div>
+      <div class="row-2">
+        <div class="field">
+          <label for="trade">Trade</label>
+          <select id="trade" name="trade">
+            <option>Roofing</option>
+            <option>Plumbing</option>
+            <option>HVAC</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="message">What's happening with your calls right now?</label>
+        <textarea id="message" name="message" placeholder="e.g. we miss a lot of calls during job hours, or we have old leads we never followed up on..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send →</button>
+    </form>
+
+    <div class="contact-side reveal">
+      <div class="item">
+        <div>Email</div>
+        <a href="mailto:hello@lumiereai.me">hello@lumiereai.me</a>
+      </div>
+      <div class="item">
+        <div>Response time</div>
+        <div style="color: var(--text);">Usually within one business day</div>
+      </div>
+      <div class="item">
+        <div>Best for</div>
+        <div style="color: var(--text);">Roofing, plumbing, and HVAC business owners</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <a href="index.html" class="brand"><span class="dot"></span>Lumière AI</a>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-fine">© 2026 Lumière AI. Built for roofers, plumbers, and HVAC teams who'd rather be on the job.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
