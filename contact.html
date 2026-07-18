@@ -34,6 +34,9 @@
 <section class="section-tight">
   <div class="wrap grid-2" style="align-items: start;">
     <form id="contact-form" class="reveal">
+      <input type="hidden" name="access_key" value="ab494fed-c36d-4557-8102-f8f3ff03dc1b">
+      <input type="hidden" name="subject" value="New inquiry from Lumiere AI website">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
       <div class="row-2">
         <div class="field">
           <label for="name">Name</label>
@@ -68,6 +71,7 @@
         <textarea id="message" name="message" placeholder="e.g. we miss a lot of calls during job hours, or we have old leads we never followed up on..."></textarea>
       </div>
       <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send →</button>
+      <p id="form-status" style="font-family: var(--font-mono); font-size: 0.82rem; min-height: 1.2em;"></p>
     </form>
 
     <div class="contact-side reveal">

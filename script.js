@@ -34,16 +34,40 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach((el) => el.classList.add('in'));
   }
 
-  // contact form (no backend yet — just confirms locally)
+  // contact form — submits to Web3Forms, delivers to your inbox
   const form = document.querySelector('#contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
+      const status = document.querySelector('#form-status');
       const original = btn.textContent;
-      btn.textContent = 'Sent — we\'ll be in touch';
+
+      btn.textContent = 'Sending...';
       btn.disabled = true;
-      setTimeout(() => { btn.textContent = original; btn.disabled = false; form.reset(); }, 3000);
+      if (status) { status.textContent = ''; status.style.color = ''; }
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          btn.textContent = 'Sent — we\'ll be in touch';
+          if (status) { status.textContent = 'Thanks — your message is in.'; status.style.color = 'var(--blue)'; }
+          form.reset();
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        btn.textContent = original;
+        if (status) { status.textContent = 'Something went wrong — try again, or email us directly.'; status.style.color = 'var(--danger)'; }
+      } finally {
+        setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 3500);
+      }
     });
   }
 });
